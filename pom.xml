@@ -42,4 +42,9 @@
 			<artifactId>postgresql</artifactId>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<finalName>book-service</finalName>
+	</build>
+
 </project>
