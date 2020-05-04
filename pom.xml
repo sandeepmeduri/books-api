@@ -45,6 +45,13 @@
 
 	<build>
 		<finalName>book-service</finalName>
+		  <plugins>
+    <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+    </plugin>
+  </plugins>
 	</build>
 
 </project>
