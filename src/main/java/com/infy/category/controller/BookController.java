@@ -35,7 +35,7 @@ public class BookController {
 		uriVariables.put("to", to);
 
 		ResponseEntity<CurrencyConversion> responseEntity = new RestTemplate().getForEntity(
-				"http://localhost:8982/api/currency-exchange/from/{from}/to/{to}", CurrencyConversion.class, uriVariables);
+				"http://18.222.85.128:8083/api/currency-exchange/from/{from}/to/{to}", CurrencyConversion.class, uriVariables);
 
 		CurrencyConversion response = responseEntity.getBody();
 		
