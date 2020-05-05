@@ -1,5 +1,9 @@
 FROM openjdk:8-jdk-alpine
 EXPOSE 8082
-WORKDIR /home/ec2-user
-COPY /app/Books-0.0.1-SNAPSHOT.jar /home/app/Books-0.0.1-SNAPSHOT.jar
-ENTRYPOINT java -jar /home/app/Books-0.0.1-SNAPSHOT.jar
+RUN rm -rf /usr/src/app
+WORKDIR /usr/src/app
+COPY . .
+RUN pwd
+RUN ls
+EXPOSE 8082
+ENTRYPOINT java -jar /usr/src/app/Books-0.0.1-SNAPSHOT.jar
