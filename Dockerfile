@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk-alpine
 EXPOSE 8082
 RUN pwd
-RUN ls
+RUN sudo su
 RUN rm -rf /app
 RUN mkdir -p /app/
 RUN mkdir -p /app/logs/
