@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -21,6 +22,39 @@ public class Book {
 	@NotNull
 	private String author;
 	
+	@Transient
+	private Double price = 25.0;
+	
+	@Transient
+	private Double priceInEUR;
+	
+	@Transient
+	private Double priceInUsd;
+	
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public Double getPriceInEUR() {
+		return priceInEUR;
+	}
+
+	public void setPriceInEUR(Double priceInEUR) {
+		this.priceInEUR = priceInEUR;
+	}
+
+	public Double getPriceInUsd() {
+		return priceInUsd;
+	}
+
+	public void setPriceInUsd(Double priceInUsd) {
+		this.priceInUsd = priceInUsd;
+	}
+
 	public Book() {
 		
 	}
@@ -56,7 +90,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", author=" + author + "]";
+		return "Book [title=" + title + ", author=" + author + ", priceInEUR=\" + priceInEUR + \"]";
 	}
 	
 }
