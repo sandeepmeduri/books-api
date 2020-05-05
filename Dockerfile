@@ -1,5 +1,4 @@
 FROM openjdk:8-jdk-alpine
-VOLUME /tmp
 EXPOSE 8082
 RUN rm -rf /app
 RUN mkdir -p /app/
