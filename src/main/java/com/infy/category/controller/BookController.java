@@ -42,7 +42,7 @@ public class BookController {
 		return response.getConversion();
 	}
 
-	@GetMapping("/api/books")
+	@GetMapping("/api/books/currency")
 	public List<Book> getUserOrder() {
 		List<Book> books = (List<Book>) repository.findAll();
 		books.stream().forEach(p -> {

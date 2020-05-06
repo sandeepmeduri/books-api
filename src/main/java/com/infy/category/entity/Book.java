@@ -26,10 +26,10 @@ public class Book {
 	private Double price = 25.0;
 	
 	@Transient
-	private Double priceInEUR;
+	private Double priceInEUR = 0.0;
 	
 	@Transient
-	private Double priceInUsd;
+	private Double priceInUsd = 0.0;
 	
 	public Double getPrice() {
 		return price;
