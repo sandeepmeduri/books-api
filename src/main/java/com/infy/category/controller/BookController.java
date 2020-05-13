@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,8 +19,6 @@ public class BookController {
 	
 	private BookRepository repository;
 	
-	@Autowired
-	private static Environment environment;
 	
 	@Autowired
 	public BookController(BookRepository repository) {
@@ -35,7 +32,7 @@ public class BookController {
 		uriVariables.put("to", to);
 
 		ResponseEntity<CurrencyConversion> responseEntity = new RestTemplate().getForEntity(
-				"http://18.222.85.128:8083/api/currency-exchange/from/{from}/to/{to}", CurrencyConversion.class, uriVariables);
+				"http://3.136.11.40:8083/api/currency-exchange/from/{from}/to/{to}", CurrencyConversion.class, uriVariables);
 
 		CurrencyConversion response = responseEntity.getBody();
 		
